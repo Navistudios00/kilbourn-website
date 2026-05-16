@@ -1,46 +1,264 @@
-/* ============================================
-   KILBOURN — Design tokens
-   ============================================ */
-:root {
-  /* Palette */
-  --ink:        #1a1917;
-  --ink-soft:   #252422;
-  --cream:      #f5edd8;
-  --paper:      #faf6ed;
-  --smoke:      #8c8880;
-  --ash:        #c8c2b8;
-  --orange:     #d4520a;
-  --orange-glow: #ff8c42;
-  --green:      #2a6040;
-  --wa-green:   #25D366;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto — Kilbourn / West Kilbourn Ave</title>
+  <meta name="description" content="Contacto Kilbourn — Consultas, drops y colaboraciones. WhatsApp +54 9 11 2771-9845." />
+  <link rel="icon" href="assets/logos/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/loader.css">
+  <style>
+    .contact-hero {
+      background: var(--ink); color: var(--cream);
+      margin-top: calc(-1 * (var(--topbar-h) + var(--nav-h)));
+      padding: calc(var(--topbar-h) + var(--nav-h) + 100px) 0 100px;
+      position: relative; overflow: hidden; isolation: isolate;
+    }
+    .contact-hero::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(50% 50% at 20% 50%, rgba(212,82,10,.16), transparent 60%);
+    }
+    .contact-hero h1 {
+      font-family: var(--display);
+      font-size: clamp(72px, 12vw, 180px);
+      text-transform: uppercase; line-height: .9;
+      color: var(--cream); letter-spacing: -.01em;
+      margin: 16px 0 24px; position: relative;
+    }
+    .contact-hero h1 .accent { color: var(--orange); }
+    .contact-hero p { font-weight: 300; font-size: clamp(15px,1.5vw,18px); max-width: 540px; color: rgba(245,237,216,.6); position: relative; }
+    .contact-grid {
+      padding: clamp(80px,10vw,140px) 0;
+      background: var(--paper);
+    }
+    .contact-grid__inner {
+      display: grid; grid-template-columns: 1.1fr .9fr;
+      gap: clamp(40px,6vw,80px); align-items: start;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 18px; }
+    .contact-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .contact-form label {
+      display: block;
+      font-size: 10.5px; font-weight: 700; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--smoke); margin-bottom: 8px;
+    }
+    .contact-form input, .contact-form select, .contact-form textarea {
+      width: 100%;
+      padding: 14px 0;
+      background: transparent;
+      border: 0; border-bottom: 1px solid rgba(37,36,34,.18);
+      font-size: 15px; color: var(--ink);
+      outline: none;
+      transition: border-color var(--t-fast) var(--ease);
+      font-family: var(--sans);
+    }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: var(--orange); }
+    .contact-form textarea { min-height: 120px; resize: vertical; }
+    .contact-info { display: flex; flex-direction: column; gap: 24px; }
+    .contact-card {
+      background: var(--ink); color: var(--cream);
+      padding: 32px; border-radius: var(--r-lg);
+      display: flex; flex-direction: column; gap: 18px;
+      position: relative; overflow: hidden; isolation: isolate;
+    }
+    .contact-card::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(212,82,10,.2), transparent 60%);
+      z-index: 0;
+    }
+    .contact-card > * { position: relative; z-index: 1; }
+    .contact-card h3 { font-family: var(--display); font-size: 40px; text-transform: uppercase; letter-spacing: -.005em; }
+    .contact-list { list-style: none; display: flex; flex-direction: column; gap: 14px; padding: 0; }
+    .contact-list li { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(245,237,216,.1); font-size: 13.5px; }
+    .contact-list .lbl { font-size: 10.5px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: rgba(245,237,216,.5); }
+    .contact-list a { transition: color var(--t-fast) var(--ease); }
+    .contact-list a:hover { color: var(--orange); }
+    @media (max-width: 900px) {
+      .contact-grid__inner { grid-template-columns: 1fr; }
+      .contact-form .row { grid-template-columns: 1fr; }
+    }
+  </style>
+  <link rel="stylesheet" href="styles/mobile.css">
+</head>
+<body data-screen-label="04 Contacto">
 
-  /* Typography */
-  --display: "Bebas Neue", "Oswald", Impact, sans-serif;
-  --sans:    "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  <div class="topbar"><div class="topbar__track"></div></div>
 
-  /* Layout */
-  --container: min(1440px, 100% - 32px);
-  --nav-h: 72px;
-  --topbar-h: 34px;
+  <header class="nav">
+    <div class="nav__inner wrap">
+      <a href="index.html" class="nav__brand"><img src="assets/logos/kilbourn-logo.svg" alt="Kilbourn"></a>
+      <nav>
+        <ul class="nav__links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="tienda.html">Tienda</a></li>
+          <li><a href="tienda.html">Drop 001</a></li>
+          <li><a href="manual.html">Marca</a></li>
+          <li><a href="contacto.html" class="is-active">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <button class="nav__btn" data-search-trigger aria-label="Buscar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+        <button class="nav__btn" data-cart-trigger aria-label="Bolsa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1.2 11.2A2 2 0 0 1 14.8 20H9.2a2 2 0 0 1-2-1.8L6 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+          <span class="nav__cart-count">0</span>
+        </button>
+        <button class="nav__burger" aria-label="Menú"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
 
-  /* Radii */
-  --r-sm: 10px;
-  --r:    20px;
-  --r-lg: 28px;
-  --r-pill: 999px;
+  <nav class="drawer-menu">
+    <a href="index.html">Inicio</a>
+    <a href="tienda.html">Tienda</a>
+    <a href="manual.html">Marca</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
 
-  /* Shadows */
-  --sh-card: 0 4px 24px rgba(26,25,23,.08);
-  --sh-lift: 0 16px 48px rgba(26,25,23,.14);
-  --sh-deep: 0 32px 80px rgba(26,25,23,.22);
+  <div class="scroll-progress" aria-hidden="true"></div>
 
-  /* Motion */
-  --ease: cubic-bezier(.22,1,.36,1);
-  --t-fast: .25s;
-  --t:      .45s;
-  --t-slow: .72s;
-}
+  <section class="contact-hero">
+    <div class="wrap" style="position:relative;">
+      <span class="eyebrow" style="color:var(--orange);">Contacto · West Kilbourn Ave</span>
+      <h1>Escribir<br>a <span class="accent">Kilbourn.</span></h1>
+      <p>Consultas, colaboraciones, talles, próximos drops. Respondemos por WhatsApp generalmente en el día. Sin formularios genéricos: contestamos personas, no tickets.</p>
+    </div>
+  </section>
 
-@media (max-width: 768px) {
-  :root { --topbar-h: 28px; --nav-h: 64px; }
-}
+  <section class="contact-grid">
+    <div class="wrap">
+      <div class="contact-grid__inner">
+        <form class="contact-form" id="contact-form">
+          <div>
+            <label for="c-name">Nombre</label>
+            <input id="c-name" type="text" required placeholder="Tu nombre">
+          </div>
+          <div class="row">
+            <div>
+              <label for="c-email">Email</label>
+              <input id="c-email" type="email" required placeholder="tu@email.com">
+            </div>
+            <div>
+              <label for="c-subject">Asunto</label>
+              <select id="c-subject">
+                <option>Consulta de pieza</option>
+                <option>Próximo drop</option>
+                <option>Colaboración</option>
+                <option>Prensa</option>
+                <option>Otro</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="c-msg">Mensaje</label>
+            <textarea id="c-msg" required placeholder="Contanos por qué nos escribís..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--wa btn--lg" style="align-self:flex-start;">Enviar por WhatsApp</button>
+        </form>
+
+        <div class="contact-info">
+          <div class="contact-card">
+            <span class="eyebrow no-line" style="color:var(--orange);">Directo</span>
+            <h3>WhatsApp.</h3>
+            <p style="color:rgba(245,237,216,.6);font-size:14px;">La forma más rápida. Respondemos durante el día, hora de Buenos Aires.</p>
+            <a href="https://wa.me/5491127719845" target="_blank" rel="noopener" class="btn btn--wa">Escribir +54 9 11 2771-9845</a>
+          </div>
+          <ul class="contact-list">
+            <li><span class="lbl">Email</span><a href="mailto:kilbourn@gmail.com">kilbourn@gmail.com</a></li>
+            <li><span class="lbl">Instagram</span><a href="https://instagram.com/kilbournave" target="_blank" rel="noopener">@kilbournave</a></li>
+            <li><span class="lbl">TikTok</span><a href="https://tiktok.com/@kilbournave" target="_blank" rel="noopener">@kilbournave</a></li>
+            <li><span class="lbl">Base</span><span>Buenos Aires · AR</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__bigmark" aria-hidden="true">KB</div>
+    <div class="wrap" style="position:relative;z-index:2;">
+      <div class="footer__grid">
+        <div>
+          <img src="assets/logos/kilbourn-logo.svg" alt="Kilbourn" class="footer__brand">
+          <p class="footer__tagline">Streetwear premium con pulso vintage y dirección editorial. — Buenos Aires.</p>
+        </div>
+        <div>
+          <h4 class="footer__title">Tienda</h4>
+          <ul class="footer__list">
+            <li><a href="tienda.html">Drop 001</a></li>
+            <li><a href="tienda.html?cat=remeras">Remeras</a></li>
+            <li><a href="tienda.html?cat=hoodies">Hoodies</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__title">Marca</h4>
+          <ul class="footer__list">
+            <li><a href="manual.html">Manual</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="https://instagram.com/kilbournave" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__title">Avisos del próximo drop</h4>
+          <form class="footer__news" data-news>
+            <input type="email" placeholder="tu@email.com" required>
+            <button type="submit" class="btn btn--orange">Suscribirme</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Kilbourn / West Kilbourn Ave</span>
+        <span>Buenos Aires · AR · Drop 001</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/5491127719845" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.9-1.7.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.2-1.3c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.5 0-2.9-.4-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3c-.8-1.3-1.2-2.7-1.2-4.2 0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/></svg>
+  </a>
+
+  <div class="search" role="dialog" aria-modal="true">
+    <button class="search__close" aria-label="Cerrar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="search__inner">
+      <input type="text" class="search__input" placeholder="Buscá una pieza...">
+      <div class="search__hint">⌘ K · Esc para cerrar</div>
+      <div class="search__results"></div>
+    </div>
+  </div>
+
+  <div class="cart-overlay"></div>
+  <aside class="cart" role="dialog" aria-modal="true">
+    <div class="cart__head"><h2>Bolsa</h2><button class="cart__close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    <div class="cart__body"></div>
+    <div class="cart__foot">
+      <div class="cart__total"><span class="label">Total estimado</span><span class="value">$0</span></div>
+      <button class="btn btn--wa btn--full btn--lg" data-cart-checkout>Consultar por WhatsApp</button>
+      <p class="note">Coordinamos disponibilidad, talle y envío por WhatsApp.</p>
+    </div>
+  </aside>
+
+  <script type="module" src="src/loader.js"></script>
+  <script type="module" src="src/app.js"></script>
+  <script type="module" src="src/cart.js"></script>
+  <script type="module" src="src/effects.js"></script>
+  <script type="module">
+    import { WA_NUMBER } from "./data/products.js";
+    document.getElementById("contact-form")?.addEventListener("submit", e => {
+      e.preventDefault();
+      const name = document.getElementById("c-name").value.trim();
+      const email = document.getElementById("c-email").value.trim();
+      const subject = document.getElementById("c-subject").value;
+      const msg = document.getElementById("c-msg").value.trim();
+      const text = `Hola Kilbourn! 👋\n\nNombre: ${name}\nEmail: ${email}\nAsunto: ${subject}\n\n${msg}`;
+      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
+    });
+  </script>
+</body>
+</html>
