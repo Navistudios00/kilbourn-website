@@ -232,6 +232,11 @@ body[data-screen-label="Lab"]{
   background:linear-gradient(180deg,var(--paper),#eee5d2);
 }
 
+.lab-store-nav-stack{
+  display:grid;
+  gap:28px;
+}
+
 .lab-store-nav-card{
   position:relative;
   overflow:hidden;
@@ -248,9 +253,9 @@ body[data-screen-label="Lab"]{
   align-items:center;
   gap:20px;
   padding:0 clamp(18px,4vw,44px);
-  background:#121806;
-  color:#d8ff00;
-  border-top:8px solid #d8ff00;
+  background:var(--ink);
+  color:var(--cream);
+  border-top:8px solid var(--orange);
 }
 
 .lab-store-nav__links,
@@ -275,29 +280,36 @@ body[data-screen-label="Lab"]{
   color:inherit;
   font-size:11px;
   font-weight:900;
-  letter-spacing:.02em;
+  letter-spacing:.08em;
   text-transform:uppercase;
   text-decoration:none;
-  transition:opacity var(--t) var(--ease),transform var(--t) var(--ease);
+  transition:color var(--t) var(--ease),opacity var(--t) var(--ease),transform var(--t) var(--ease);
 }
 
 .lab-store-nav a:hover,
 .lab-store-nav button:hover{
-  opacity:.72;
-  transform:translateY(-1px);
+  color:var(--orange);
 }
 
 .lab-store-nav__brand{
   display:grid;
   place-items:center;
-  width:72px;
+  width:clamp(84px,12vw,150px);
   height:56px;
 }
 
 .lab-store-nav__brand img{
+  max-width:100%;
+  max-height:44px;
+  filter:brightness(0) invert(1);
+}
+
+.lab-store-nav__brand--primary img{
+  width:clamp(112px,11vw,148px);
+}
+
+.lab-store-nav__brand--mono img{
   width:42px;
-  max-height:48px;
-  filter:brightness(0) saturate(100%) invert(88%) sepia(95%) saturate(2171%) hue-rotate(12deg) brightness(108%) contrast(106%);
 }
 
 .lab-store-nav__actions button{
@@ -317,15 +329,15 @@ body[data-screen-label="Lab"]{
   display:grid;
   gap:8px;
   padding:clamp(26px,5vw,52px);
-  min-height:260px;
+  min-height:220px;
   background:
-    radial-gradient(circle at 82% 24%,rgba(216,255,0,.18),transparent 24%),
+    radial-gradient(circle at 82% 24%,rgba(212,82,10,.2),transparent 24%),
     linear-gradient(135deg,#151511,#242320);
   color:var(--cream);
 }
 
 .lab-store-nav-preview span{
-  color:#d8ff00;
+  color:var(--orange);
   font-size:11px;
   font-weight:900;
   letter-spacing:.18em;
@@ -339,6 +351,92 @@ body[data-screen-label="Lab"]{
   font-weight:400;
   line-height:.86;
   text-transform:uppercase;
+}
+
+.roll-link{
+  height:16px;
+  overflow:hidden;
+  display:inline-flex;
+  align-items:flex-start;
+}
+
+.roll-link > span{
+  position:relative;
+  display:block;
+  line-height:16px;
+  transition:transform .34s cubic-bezier(.22,.8,.22,1);
+}
+
+.roll-link > span::after{
+  content:attr(data-text);
+  position:absolute;
+  left:0;
+  top:100%;
+  color:var(--orange);
+}
+
+.roll-link:hover > span,
+.roll-link:focus-visible > span{
+  transform:translateY(-100%);
+}
+
+.roll-icon{
+  overflow:hidden;
+}
+
+.roll-icon > span{
+  display:grid;
+  gap:8px;
+  transition:transform .34s cubic-bezier(.22,.8,.22,1);
+}
+
+.roll-icon:hover > span,
+.roll-icon:focus-visible > span{
+  transform:translateY(calc(-100% + 26px));
+}
+
+.lab-store-nav__brand--swap{
+  overflow:hidden;
+}
+
+.brand-swap__stage{
+  position:relative;
+  display:block;
+  width:clamp(116px,12vw,152px);
+  height:44px;
+  overflow:hidden;
+}
+
+.brand-swap__logo{
+  position:absolute;
+  left:50%;
+  top:50%;
+  max-width:100%;
+  max-height:42px;
+  transform:translate(-50%,-50%);
+  transition:transform .42s cubic-bezier(.22,.8,.22,1),opacity .24s ease;
+}
+
+.brand-swap__logo--main{
+  width:clamp(112px,11vw,148px);
+}
+
+.brand-swap__logo--alt{
+  width:42px;
+  transform:translate(-50%,72%);
+  opacity:0;
+}
+
+.lab-store-nav__brand--swap:hover .brand-swap__logo--main,
+.lab-store-nav__brand--swap:focus-visible .brand-swap__logo--main{
+  transform:translate(-50%,-172%);
+  opacity:0;
+}
+
+.lab-store-nav__brand--swap:hover .brand-swap__logo--alt,
+.lab-store-nav__brand--swap:focus-visible .brand-swap__logo--alt{
+  transform:translate(-50%,-50%);
+  opacity:1;
 }
 
 .lab-notes__grid{
@@ -442,6 +540,16 @@ body[data-screen-label="Lab"]{
   }
 
   .lab-store-nav__brand img{
+    width:auto;
+  }
+
+  .lab-store-nav__brand--primary img,
+  .brand-swap__logo--main{
+    width:104px;
+  }
+
+  .lab-store-nav__brand--mono img,
+  .brand-swap__logo--alt{
     width:34px;
   }
 }
