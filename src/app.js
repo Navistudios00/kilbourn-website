@@ -3,6 +3,12 @@ import { products, formatPrice, STATUS_LABEL, WA_NUMBER } from "../data/products
 
 const isTouch = matchMedia("(hover: none)").matches;
 
+// --------------------- LAB EXPERIMENTS ---------------------
+function initLabExperiments(){
+  if(document.body?.dataset?.screenLabel !== "Lab") return;
+  import("./lab-nav-dropdowns.js").catch(() => {});
+}
+
 // --------------------- TOP BAR MARQUEE ---------------------
 function buildTopbar(){
   const track = document.querySelector(".topbar__track");
@@ -193,6 +199,7 @@ window.addEventListener("resize", () => {
 
 // --------------------- INIT ---------------------
 document.addEventListener("DOMContentLoaded", () => {
+  initLabExperiments();
   buildTopbar();
   initScrollProgress();
   initReveal();
