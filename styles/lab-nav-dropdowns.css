@@ -10,169 +10,35 @@
 
 .lab-store-nav--roll::before,
 .lab-store-nav--roll::after{
-  position:absolute;
-  top:calc(100% + 14px);
-  left:clamp(18px,4vw,44px);
-  z-index:20;
-  width:min(360px,calc(100vw - 32px));
-  border:1px solid rgba(245,237,216,.12);
-  border-radius:22px;
-  background:rgba(26,25,23,.96);
-  color:var(--cream);
-  box-shadow:0 28px 90px rgba(0,0,0,.34);
-  -webkit-backdrop-filter:blur(18px);
-  backdrop-filter:blur(18px);
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-  transform:translateY(10px);
-  transition:opacity .22s ease,transform .26s cubic-bezier(.22,.8,.22,1),visibility .22s ease;
-  white-space:pre-line;
+  display:none;
 }
 
-.lab-store-nav--roll::before{
-  padding:18px 18px 0;
-  min-height:0;
-  color:var(--orange);
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-}
-
-.lab-store-nav--roll::after{
-  padding:46px 18px 18px;
-  min-height:168px;
-  font-size:10px;
-  font-weight:900;
-  line-height:2.25;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-}
-
-.lab-store-nav--roll:has(.roll-link:hover)::before,
-.lab-store-nav--roll:has(.roll-link:hover)::after,
-.lab-store-nav--roll:has(.roll-icon:hover)::before,
-.lab-store-nav--roll:has(.roll-icon:hover)::after,
-.lab-store-nav--roll:has(.roll-link:focus-visible)::before,
-.lab-store-nav--roll:has(.roll-link:focus-visible)::after,
-.lab-store-nav--roll:has(.roll-icon:focus-visible)::before,
-.lab-store-nav--roll:has(.roll-icon:focus-visible)::after{
-  opacity:1;
-  visibility:visible;
-  transform:translateY(0);
-}
-
-.lab-store-nav--roll:has(.lab-store-nav__links .roll-link:nth-child(1):hover)::before,
-.lab-store-nav--roll:has(.lab-store-nav__links .roll-link:nth-child(1):focus-visible)::before{
-  content:"TIENDA";
-}
-
-.lab-store-nav--roll:has(.lab-store-nav__links .roll-link:nth-child(1):hover)::after,
-.lab-store-nav--roll:has(.lab-store-nav__links .roll-link:nth-child(1):focus-visible)::after{
-  content:"COMPRAR POR INTENCIÓN\A Todo el drop   ·   New arrivals\A Lo último   ·   Best sellers\A Sale   ·   Preview";
-}
-
-.lab-store-nav--roll:has(.lab-store-nav__links .roll-link:nth-child(2):hover)::before,
-.lab-store-nav--roll:has(.lab-store-nav__links .roll-link:nth-child(2):focus-visible)::before{
-  content:"REMERAS";
-}
-
-.lab-store-nav--roll:has(.lab-store-nav__links .roll-link:nth-child(2):hover)::after,
-.lab-store-nav--roll:has(.lab-store-nav__links .roll-link:nth-child(2):focus-visible)::after{
-  content:"REMERAS KILBOURN\A New arrivals   ·   Oversize\A Hombres   ·   Mujeres\A Sale   ·   Drop 001";
-}
-
-.lab-store-nav--roll:has(.lab-store-nav__links .roll-link:nth-child(3):hover)::before,
-.lab-store-nav--roll:has(.lab-store-nav__links .roll-link:nth-child(3):focus-visible)::before{
-  content:"HOODIES";
-}
-
-.lab-store-nav--roll:has(.lab-store-nav__links .roll-link:nth-child(3):hover)::after,
-.lab-store-nav--roll:has(.lab-store-nav__links .roll-link:nth-child(3):focus-visible)::after{
-  content:"CAPAS & ABRIGO\A New arrivals   ·   Oversize\A Zip hoodies   ·   Pullover\A Sale   ·   Essentials";
-}
-
-.lab-store-nav--roll:has(.lab-store-nav__links .roll-link:nth-child(4):hover)::before,
-.lab-store-nav--roll:has(.lab-store-nav__links .roll-link:nth-child(4):focus-visible)::before{
-  content:"ARCHIVO";
-}
-
-.lab-store-nav--roll:has(.lab-store-nav__links .roll-link:nth-child(4):hover)::after,
-.lab-store-nav--roll:has(.lab-store-nav__links .roll-link:nth-child(4):focus-visible)::after{
-  content:"UNIVERSO DE MARCA\A Drop 001   ·   Lookbook\A Proceso   ·   Manual\A Próximos drops";
-}
-
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-link:hover)::before,
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-link:focus-visible)::before,
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-icon:hover)::before,
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-icon:focus-visible)::before,
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-link:hover)::after,
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-link:focus-visible)::after,
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-icon:hover)::after,
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-icon:focus-visible)::after{
-  left:auto;
-  right:clamp(18px,4vw,44px);
-}
-
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-link:hover)::before,
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-link:focus-visible)::before{
-  content:"SOPORTE";
-}
-
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-link:hover)::after,
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-link:focus-visible)::after{
-  content:"AYUDA RÁPIDA\A Talles   ·   Envíos\A Cambios   ·   WhatsApp\A Estado del pedido";
-}
-
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-icon:nth-of-type(1):hover)::before,
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-icon:nth-of-type(1):focus-visible)::before{
-  content:"BUSCAR";
-}
-
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-icon:nth-of-type(1):hover)::after,
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-icon:nth-of-type(1):focus-visible)::after{
-  content:"ENCONTRAR RÁPIDO\A Remeras   ·   Hoodies\A New arrivals   ·   Sale\A Drop 001";
-}
-
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-icon:nth-of-type(2):hover)::before,
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-icon:nth-of-type(2):focus-visible)::before{
-  content:"BOLSA";
-}
-
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-icon:nth-of-type(2):hover)::after,
-.lab-store-nav--roll:has(.lab-store-nav__actions .roll-icon:nth-of-type(2):focus-visible)::after{
-  content:"COMPRA DIRECTA\A Ver bolsa   ·   WhatsApp\A Guardar piezas   ·   Consultar talle\A Métodos de pago";
-}
-
-.lab-nav-item{
+.lab-mega-item{
   position:relative;
   display:inline-flex;
   align-items:center;
   height:44px;
 }
 
-.lab-nav-dropdown{
+.lab-mega-panel{
   position:absolute;
-  top:calc(100% + 16px);
-  left:50%;
-  width:min(330px,calc(100vw - 32px));
-  padding:18px;
-  border:1px solid rgba(245,237,216,.12);
-  border-radius:22px;
-  background:rgba(26,25,23,.96);
-  color:var(--cream);
-  box-shadow:0 28px 90px rgba(0,0,0,.34);
-  -webkit-backdrop-filter:blur(18px);
-  backdrop-filter:blur(18px);
-  transform:translate(-50%,10px);
+  top:60px;
+  left:0;
+  z-index:40;
+  width:min(760px,calc(100vw - 32px));
+  min-height:clamp(260px,32vw,360px);
+  padding:26px clamp(26px,4vw,58px) 34px;
+  background:var(--orange);
+  color:var(--ink);
+  box-shadow:0 32px 90px rgba(0,0,0,.28);
   opacity:0;
   visibility:hidden;
   pointer-events:none;
-  transition:opacity .22s ease,transform .26s cubic-bezier(.22,.8,.22,1),visibility .22s ease;
+  transform:translateY(-8px);
+  transition:opacity .22s ease,transform .28s cubic-bezier(.22,.8,.22,1),visibility .22s ease;
 }
 
-.lab-nav-dropdown::before{
+.lab-mega-panel::before{
   content:"";
   position:absolute;
   left:0;
@@ -181,88 +47,58 @@
   height:18px;
 }
 
-.lab-nav-item:hover .lab-nav-dropdown,
-.lab-nav-item:focus-within .lab-nav-dropdown{
+.lab-mega-item:hover .lab-mega-panel,
+.lab-mega-item:focus-within .lab-mega-panel{
   opacity:1;
   visibility:visible;
   pointer-events:auto;
-  transform:translate(-50%,0);
+  transform:translateY(0);
 }
 
-.lab-nav-dropdown__eyebrow{
-  display:block;
-  margin-bottom:9px;
-  color:var(--orange);
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-}
-
-.lab-nav-dropdown strong{
-  display:block;
-  margin-bottom:16px;
-  color:var(--cream);
-  font-family:var(--display);
-  font-size:32px;
-  font-weight:400;
-  line-height:.92;
-  text-transform:uppercase;
-}
-
-.lab-nav-dropdown__grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-}
-
-.lab-store-nav .lab-nav-dropdown__grid a{
-  min-height:38px;
-  display:flex;
-  align-items:center;
-  padding:10px 12px;
-  border:1px solid rgba(245,237,216,.1);
-  border-radius:999px;
-  background:rgba(245,237,216,.045);
-  color:rgba(245,237,216,.82);
-  font-size:10px;
-  letter-spacing:.1em;
-  transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease;
-}
-
-.lab-store-nav .lab-nav-dropdown__grid a:hover,
-.lab-store-nav .lab-nav-dropdown__grid a:focus-visible{
-  background:var(--orange);
-  border-color:var(--orange);
-  color:var(--cream);
-  transform:translateY(-1px);
-}
-
-.lab-store-nav__actions .lab-nav-dropdown{
+.lab-store-nav__actions .lab-mega-panel{
   left:auto;
   right:0;
-  transform:translate(0,10px);
 }
 
-.lab-store-nav__actions .lab-nav-item:hover .lab-nav-dropdown,
-.lab-store-nav__actions .lab-nav-item:focus-within .lab-nav-dropdown{
-  transform:translate(0,0);
+.lab-mega__eyebrow{
+  display:block;
+  margin-bottom:18px;
+  color:var(--ink);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.16em;
+  text-transform:uppercase;
 }
 
-.lab-store-nav__links .lab-nav-item:first-child .lab-nav-dropdown{
-  left:0;
-  transform:translate(0,10px);
+.lab-mega__list{
+  display:grid;
+  gap:6px;
+  max-width:620px;
 }
 
-.lab-store-nav__links .lab-nav-item:first-child:hover .lab-nav-dropdown,
-.lab-store-nav__links .lab-nav-item:first-child:focus-within .lab-nav-dropdown{
-  transform:translate(0,0);
+.lab-store-nav .lab-mega__list a{
+  display:block;
+  width:max-content;
+  max-width:100%;
+  color:var(--ink);
+  font-family:var(--display);
+  font-size:clamp(36px,4.2vw,64px);
+  font-weight:400;
+  line-height:.9;
+  letter-spacing:-.01em;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:transform .22s cubic-bezier(.22,.8,.22,1),opacity .22s ease;
+}
+
+.lab-store-nav .lab-mega__list a:hover,
+.lab-store-nav .lab-mega__list a:focus-visible{
+  transform:translateX(10px);
+  opacity:.72;
 }
 
 @media (max-width:900px){
-  .lab-nav-dropdown,
-  .lab-store-nav--roll::before,
-  .lab-store-nav--roll::after{
+  .lab-mega-panel{
     display:none;
   }
 }
