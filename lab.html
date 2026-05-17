@@ -56,7 +56,8 @@
   </nav>
 
   <main>
-    <section class="lab-hero">
+    <section class="lab-hero" id="lab-hero" data-lab-code="LAB-001">
+      <span class="lab-code" aria-label="Código de sección">LAB-001</span>
       <div class="lab-hero__grid" aria-hidden="true"></div>
       <div class="lab-hero__inner wrap">
         <span class="eyebrow lab-hero__eyebrow">Kilbourn Visual Lab / No afecta tienda</span>
@@ -69,7 +70,8 @@
       </div>
     </section>
 
-    <section class="lab-section" id="experimentos">
+    <section class="lab-section" id="experimentos" data-lab-code="LAB-002">
+      <span class="lab-code lab-code--light" aria-label="Código de sección">LAB-002</span>
       <div class="wrap">
         <div class="lab-section__head">
           <span class="eyebrow" style="color:var(--orange);">Experimento 001</span>
@@ -77,7 +79,8 @@
           <p>Base para probar wipes, logo, tipografía gigante y mezcla de color sin ensuciar páginas reales.</p>
         </div>
 
-        <article class="lab-collision" aria-label="Prueba visual color collision">
+        <article class="lab-collision" data-lab-code="LAB-002A" aria-label="Prueba visual color collision">
+          <span class="lab-code lab-code--inside" aria-label="Código de bloque">LAB-002A</span>
           <div class="lab-collision__wipe" aria-hidden="true"></div>
           <img class="lab-collision__logo" src="assets/logos/kilbourn-logo.svg" alt="Kilbourn / West Kilbourn Ave">
           <h3>No basic goods</h3>
@@ -86,14 +89,15 @@
       </div>
     </section>
 
-    <section class="lab-section lab-section--dark">
+    <section class="lab-section lab-section--dark" id="lab-notes" data-lab-code="LAB-003">
+      <span class="lab-code" aria-label="Código de sección">LAB-003</span>
       <div class="wrap lab-notes">
         <span class="eyebrow" style="color:var(--orange);">Cómo lo usamos</span>
         <h2>Probamos acá. Pasamos solo lo que funciona.</h2>
         <div class="lab-notes__grid">
-          <article><span>01</span><h3>Seguro</h3><p>Nada de lo que probemos acá modifica la tienda ni la experiencia de compra.</p></article>
-          <article><span>02</span><h3>Rápido</h3><p>Podemos iterar efectos visuales sin romper el diseño principal.</p></article>
-          <article><span>03</span><h3>Limpio</h3><p>Si una prueba sirve, recién ahí la convertimos en componente real.</p></article>
+          <article data-lab-code="LAB-003A"><span>LAB-003A</span><h3>Seguro</h3><p>Nada de lo que probemos acá modifica la tienda ni la experiencia de compra.</p></article>
+          <article data-lab-code="LAB-003B"><span>LAB-003B</span><h3>Rápido</h3><p>Podemos iterar efectos visuales sin romper el diseño principal.</p></article>
+          <article data-lab-code="LAB-003C"><span>LAB-003C</span><h3>Limpio</h3><p>Si una prueba sirve, recién ahí la convertimos en componente real.</p></article>
         </div>
       </div>
     </section>
