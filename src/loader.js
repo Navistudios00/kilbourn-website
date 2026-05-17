@@ -7,7 +7,10 @@
   loader.className = "loader";
   loader.innerHTML = `
     <div class="loader__inner">
-      <img class="loader__logo" src="assets/logos/kilbourn-logo.svg" alt="Kilbourn" />
+      <div class="loader__logo-wrap">
+        <img class="loader__logo" src="assets/logos/kilbourn-logo.svg" alt="Kilbourn" />
+        <span class="loader__shine" aria-hidden="true"></span>
+      </div>
       <div class="loader__bar"><div class="loader__bar-fill"></div></div>
     </div>
   `;
