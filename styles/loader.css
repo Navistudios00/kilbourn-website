@@ -21,6 +21,7 @@
 .loader__logo-wrap {
   position: relative;
   display: inline-flex;
+  overflow: hidden;
 }
 .loader__logo {
   width: 300px; max-width: 65vw;
