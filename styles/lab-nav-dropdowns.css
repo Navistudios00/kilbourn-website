@@ -21,11 +21,12 @@
 }
 
 .lab-mega-panel{
-  position:absolute;
-  top:60px;
+  position:fixed;
+  top:178px;
   left:0;
+  right:0;
   z-index:40;
-  width:min(760px,calc(100vw - 32px));
+  width:100vw;
   min-height:clamp(260px,32vw,360px);
   padding:26px clamp(26px,4vw,58px) 34px;
   background:var(--orange);
@@ -43,8 +44,8 @@
   position:absolute;
   left:0;
   right:0;
-  top:-18px;
-  height:18px;
+  top:-24px;
+  height:24px;
 }
 
 .lab-mega-item:hover .lab-mega-panel,
@@ -56,8 +57,14 @@
 }
 
 .lab-store-nav__actions .lab-mega-panel{
-  left:auto;
+  left:0;
   right:0;
+}
+
+.lab-mega__eyebrow,
+.lab-mega__list{
+  width:min(1180px,calc(100vw - 52px));
+  margin-inline:auto;
 }
 
 .lab-mega__eyebrow{
@@ -73,7 +80,6 @@
 .lab-mega__list{
   display:grid;
   gap:6px;
-  max-width:620px;
 }
 
 .lab-store-nav .lab-mega__list a{
