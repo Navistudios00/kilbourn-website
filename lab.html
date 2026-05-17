@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kilbourn Lab — Pruebas visuales</title>
+  <meta name="description" content="Laboratorio visual privado para probar secciones, animaciones y dirección de arte de Kilbourn sin afectar la tienda." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="assets/logos/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/loader.css">
+  <link rel="stylesheet" href="styles/lab.css">
+</head>
+<body data-screen-label="Lab">
+
+  <div class="topbar" role="complementary" aria-label="Laboratorio Kilbourn">
+    <div class="topbar__track"></div>
+  </div>
+
+  <header class="nav">
+    <div class="nav__inner wrap">
+      <a href="index.html" class="nav__brand" aria-label="Kilbourn — Inicio">
+        <img src="assets/logos/kilbourn-logo.svg" alt="Kilbourn / West Kilbourn Ave">
+      </a>
+      <nav>
+        <ul class="nav__links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="tienda.html">Tienda</a></li>
+          <li><a href="manual.html">Marca</a></li>
+          <li><a href="lab.html" class="is-active">Lab</a></li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <a class="nav__btn" href="index.html" aria-label="Volver al inicio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        </a>
+        <button class="nav__burger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="drawer-menu" aria-label="Menú principal">
+    <a href="index.html">Inicio</a>
+    <a href="tienda.html">Tienda</a>
+    <a href="manual.html">Marca</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+  <main>
+    <section class="lab-hero">
+      <div class="lab-hero__grid" aria-hidden="true"></div>
+      <div class="lab-hero__inner wrap">
+        <span class="eyebrow lab-hero__eyebrow">Kilbourn Visual Lab / No afecta tienda</span>
+        <h1>Zona de pruebas.</h1>
+        <p>Este espacio sirve para probar ideas visuales, efectos, bloques editoriales y microinteracciones sin tocar el home, la tienda ni el manual principal.</p>
+        <div class="lab-hero__actions">
+          <a class="btn btn--cream" href="#experimentos">Ver experimentos</a>
+          <a class="btn btn--outline-light" href="index.html">Volver al inicio</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="lab-section" id="experimentos">
+      <div class="wrap">
+        <div class="lab-section__head">
+          <span class="eyebrow" style="color:var(--orange);">Experimento 001</span>
+          <h2>Color collision.</h2>
+          <p>Base para probar wipes, logo, tipografía gigante y mezcla de color sin ensuciar páginas reales.</p>
+        </div>
+
+        <article class="lab-collision" aria-label="Prueba visual color collision">
+          <div class="lab-collision__wipe" aria-hidden="true"></div>
+          <img class="lab-collision__logo" src="assets/logos/kilbourn-logo.svg" alt="Kilbourn / West Kilbourn Ave">
+          <h3>No basic goods</h3>
+          <p>Prueba aislada: fondo plano, corte naranja, logo protagonista y texto editorial.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="lab-section lab-section--dark">
+      <div class="wrap lab-notes">
+        <span class="eyebrow" style="color:var(--orange);">Cómo lo usamos</span>
+        <h2>Probamos acá. Pasamos solo lo que funciona.</h2>
+        <div class="lab-notes__grid">
+          <article><span>01</span><h3>Seguro</h3><p>Nada de lo que probemos acá modifica la tienda ni la experiencia de compra.</p></article>
+          <article><span>02</span><h3>Rápido</h3><p>Podemos iterar efectos visuales sin romper el diseño principal.</p></article>
+          <article><span>03</span><h3>Limpio</h3><p>Si una prueba sirve, recién ahí la convertimos en componente real.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__bigmark" aria-hidden="true">LAB</div>
+    <div class="wrap" style="position:relative;z-index:2;">
+      <div class="footer__bottom">
+        <span>Kilbourn Visual Lab</span>
+        <span>Pruebas aisladas / No index</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="src/loader.js"></script>
+  <script type="module" src="src/app.js"></script>
+  <script type="module" src="src/effects.js"></script>
+</body>
+</html>
