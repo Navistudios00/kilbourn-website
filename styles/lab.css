@@ -382,17 +382,27 @@ body[data-screen-label="Lab"]{
 
 .roll-icon{
   overflow:hidden;
+  line-height:0;
 }
 
 .roll-icon > span{
-  display:grid;
-  gap:8px;
+  display:flex;
+  height:18px;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  transform:translateY(0);
   transition:transform .34s cubic-bezier(.22,.8,.22,1);
+}
+
+.roll-icon svg{
+  display:block;
+  flex:0 0 18px;
 }
 
 .roll-icon:hover > span,
 .roll-icon:focus-visible > span{
-  transform:translateY(calc(-100% + 26px));
+  transform:translateY(-30px);
 }
 
 .lab-store-nav__brand--swap{
