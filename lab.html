@@ -95,36 +95,103 @@
         <div class="lab-section__head">
           <span class="eyebrow" style="color:var(--orange);">Experimento 002</span>
           <h2>Store navbar.</h2>
-          <p>Prueba de barra exclusiva para tienda: navegación a la izquierda, marca al centro y acciones de compra a la derecha.</p>
+          <p>Variantes con colores Kilbourn. Probamos logo principal, monograma y una interacción tipo “roll” sin subrayado.</p>
         </div>
 
-        <article class="lab-store-nav-card" data-lab-code="LAB-004A" aria-label="Prueba de navbar para tienda">
-          <span class="lab-code lab-code--inside" aria-label="Código de bloque">LAB-004A</span>
-          <div class="lab-store-nav" role="presentation">
-            <nav class="lab-store-nav__links" aria-label="Prueba navegación tienda izquierda">
-              <a href="tienda.html">Tienda</a>
-              <a href="tienda.html?cat=remeras">Remeras</a>
-              <a href="tienda.html?cat=hoodies">Hoodies</a>
-              <a href="manual.html">Archivo</a>
-            </nav>
-            <a class="lab-store-nav__brand" href="index.html" aria-label="Kilbourn inicio">
-              <img src="assets/logos/kb-monogram.svg" alt="KB">
-            </a>
-            <div class="lab-store-nav__actions" aria-label="Prueba acciones tienda derecha">
-              <a href="contacto.html">Soporte</a>
-              <button type="button" aria-label="Buscar">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-              </button>
-              <button type="button" aria-label="Bolsa">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1.2 11.2A2 2 0 0 1 14.8 20H9.2a2 2 0 0 1-2-1.8L6 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
-              </button>
+        <div class="lab-store-nav-stack">
+          <article class="lab-store-nav-card" data-lab-code="LAB-004A" aria-label="Navbar tienda con logo principal">
+            <span class="lab-code lab-code--inside" aria-label="Código de bloque">LAB-004A</span>
+            <div class="lab-store-nav" role="presentation">
+              <nav class="lab-store-nav__links" aria-label="Prueba navegación tienda izquierda">
+                <a href="tienda.html">Tienda</a>
+                <a href="tienda.html?cat=remeras">Remeras</a>
+                <a href="tienda.html?cat=hoodies">Hoodies</a>
+                <a href="manual.html">Archivo</a>
+              </nav>
+              <a class="lab-store-nav__brand lab-store-nav__brand--primary" href="index.html" aria-label="Kilbourn inicio">
+                <img src="assets/logos/kilbourn-logo.svg" alt="Kilbourn / West Kilbourn Ave">
+              </a>
+              <div class="lab-store-nav__actions" aria-label="Prueba acciones tienda derecha">
+                <a href="contacto.html">Soporte</a>
+                <button type="button" aria-label="Buscar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                </button>
+                <button type="button" aria-label="Bolsa">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1.2 11.2A2 2 0 0 1 14.8 20H9.2a2 2 0 0 1-2-1.8L6 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="lab-store-nav-preview">
-            <span>Vista simulada / solo tienda</span>
-            <strong>Modo compra más claro, compacto y funcional.</strong>
-          </div>
-        </article>
+            <div class="lab-store-nav-preview">
+              <span>LAB-004A / Logo principal</span>
+              <strong>Firma completa al centro. Más marca, más presencia.</strong>
+            </div>
+          </article>
+
+          <article class="lab-store-nav-card" data-lab-code="LAB-004B" aria-label="Navbar tienda con monograma">
+            <span class="lab-code lab-code--inside" aria-label="Código de bloque">LAB-004B</span>
+            <div class="lab-store-nav" role="presentation">
+              <nav class="lab-store-nav__links" aria-label="Prueba navegación tienda izquierda">
+                <a href="tienda.html">Tienda</a>
+                <a href="tienda.html?cat=remeras">Remeras</a>
+                <a href="tienda.html?cat=hoodies">Hoodies</a>
+                <a href="manual.html">Archivo</a>
+              </nav>
+              <a class="lab-store-nav__brand lab-store-nav__brand--mono" href="index.html" aria-label="Kilbourn inicio">
+                <img src="assets/logos/kb-monogram.svg" alt="KB">
+              </a>
+              <div class="lab-store-nav__actions" aria-label="Prueba acciones tienda derecha">
+                <a href="contacto.html">Soporte</a>
+                <button type="button" aria-label="Buscar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                </button>
+                <button type="button" aria-label="Bolsa">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1.2 11.2A2 2 0 0 1 14.8 20H9.2a2 2 0 0 1-2-1.8L6 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="lab-store-nav-preview">
+              <span>LAB-004B / Monograma</span>
+              <strong>Más compacto. Mejor si queremos una tienda muy funcional.</strong>
+            </div>
+          </article>
+
+          <article class="lab-store-nav-card" data-lab-code="LAB-004C" aria-label="Navbar tienda con hover roll">
+            <span class="lab-code lab-code--inside" aria-label="Código de bloque">LAB-004C</span>
+            <div class="lab-store-nav lab-store-nav--roll" role="presentation">
+              <nav class="lab-store-nav__links" aria-label="Prueba navegación tienda izquierda">
+                <a class="roll-link" href="tienda.html"><span data-text="Tienda">Tienda</span></a>
+                <a class="roll-link" href="tienda.html?cat=remeras"><span data-text="Remeras">Remeras</span></a>
+                <a class="roll-link" href="tienda.html?cat=hoodies"><span data-text="Hoodies">Hoodies</span></a>
+                <a class="roll-link" href="manual.html"><span data-text="Archivo">Archivo</span></a>
+              </nav>
+              <a class="lab-store-nav__brand lab-store-nav__brand--swap" href="index.html" aria-label="Kilbourn inicio">
+                <span class="brand-swap__stage">
+                  <img class="brand-swap__logo brand-swap__logo--main" src="assets/logos/kilbourn-logo.svg" alt="Kilbourn / West Kilbourn Ave">
+                  <img class="brand-swap__logo brand-swap__logo--alt" src="assets/logos/kb-monogram.svg" alt="KB">
+                </span>
+              </a>
+              <div class="lab-store-nav__actions" aria-label="Prueba acciones tienda derecha">
+                <a class="roll-link" href="contacto.html"><span data-text="Soporte">Soporte</span></a>
+                <button class="roll-icon" type="button" aria-label="Buscar">
+                  <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                  </span>
+                </button>
+                <button class="roll-icon" type="button" aria-label="Bolsa">
+                  <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1.2 11.2A2 2 0 0 1 14.8 20H9.2a2 2 0 0 1-2-1.8L6 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1.2 11.2A2 2 0 0 1 14.8 20H9.2a2 2 0 0 1-2-1.8L6 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div class="lab-store-nav-preview">
+              <span>LAB-004C / Hover roll</span>
+              <strong>Sin barrita. El texto sube y entra su doble; el logo cambia de firma a monograma.</strong>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
