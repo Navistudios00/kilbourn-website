@@ -2,6 +2,12 @@
 const isTouch = matchMedia("(hover: none)").matches;
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+// --------------------- LAB EXPERIMENTS ---------------------
+function initLabExperiments(){
+  if(document.body?.dataset?.screenLabel !== "Lab") return;
+  import("./lab-nav-dropdowns.js").catch(() => {});
+}
+
 // --------------------- CUSTOM CURSOR ---------------------
 function initCursor(){
   if(isTouch || reducedMotion) return;
@@ -81,6 +87,7 @@ function initMagnetic(){
 
 // --------------------- INIT ---------------------
 document.addEventListener("DOMContentLoaded", () => {
+  initLabExperiments();
   initCursor();
   initParallax();
   // Magnetic cards: init after a tick so cards exist (some are JS-rendered)
