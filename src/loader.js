@@ -8,20 +8,18 @@
   loader.innerHTML = `
     <div class="loader__inner">
       <img class="loader__logo" src="assets/logos/kilbourn-logo.svg" alt="Kilbourn" />
-      <div class="loader__dots"><span></span><span></span><span></span></div>
       <div class="loader__bar"><div class="loader__bar-fill"></div></div>
-      <div class="loader__label">West Kilbourn Ave / Drop 001</div>
     </div>
   `;
   document.body.appendChild(loader);
 
-  // Hide on full load
+  // Hide on full load — minimum display time so the logo can be appreciated
   window.addEventListener("load", () => {
     setTimeout(() => {
       loader.classList.add("is-hidden");
       html.classList.remove("is-loading");
-      setTimeout(() => loader.remove(), 600);
-    }, 380);
+      setTimeout(() => loader.remove(), 700);
+    }, 1200);
   });
 
   // Soft exit transition when navigating between same-origin pages
