@@ -20,8 +20,7 @@
 
 .loader__logo-wrap {
   position: relative;
-  overflow: hidden;
-  display: flex;
+  display: inline-flex;
 }
 .loader__logo {
   width: 300px; max-width: 65vw;
@@ -30,9 +29,17 @@
 }
 .loader__shine {
   position: absolute; inset: 0; z-index: 2;
-  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,.22) 50%, transparent 70%);
+  background: linear-gradient(115deg, transparent 25%, rgba(255,255,255,.55) 50%, transparent 75%);
   transform: translateX(-120%);
   pointer-events: none;
+  -webkit-mask-image: url('../assets/logos/kilbourn-logo.svg');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-image: url('../assets/logos/kilbourn-logo.svg');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
   animation: loaderShine 3s ease-in-out infinite;
 }
 @keyframes loaderShine {
