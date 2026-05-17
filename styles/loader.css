@@ -19,12 +19,12 @@
 }
 
 .loader__logo {
-  width: 220px; max-width: 55vw;
+  width: 300px; max-width: 65vw;
   filter: brightness(0) invert(1);
 }
 
 .loader__bar {
-  width: 160px; height: 2px;
+  width: 220px; height: 3px;
   background: rgba(245,237,216,.12);
   border-radius: 2px;
   overflow: hidden;

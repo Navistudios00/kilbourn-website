@@ -19,7 +19,7 @@
       loader.classList.add("is-hidden");
       html.classList.remove("is-loading");
       setTimeout(() => loader.remove(), 700);
-    }, 1200);
+    }, 600);
   });
 
   // Soft exit transition when navigating between same-origin pages
